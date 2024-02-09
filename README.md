@@ -29,3 +29,69 @@ test, execute:
 
     mvn clean test
 
+# How to download (CLI)
+
+1. Execute the following cURL command 
+```
+curl -O --header "Authorization: Bearer BEARER_TOKEN" https://maven.pkg.github.com/pat-lego/support-pdfviewer/com/adobe/aem/support/pdfviewer.all/1.0.0-SNAPSHOT/pdfviewer.all-1.0.0-SNAPSHOT.zip
+```
+2. Follow these steps to embed the dependency in the project
+
+# How to use in your Maven project
+
+1. Create a settings.xml file in your project and add the following to it
+```
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <id>github</id>
+          <name>Github</name>
+          <url>https://maven.pkg.github.com/pat-lego/support-pdfviewer</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <servers>
+    <server>
+      <id>github</id>
+      <username>pat-lego</username>
+      <password>BEARER_TOKEN</password>
+    </server>
+  </servers>
+</settings>
+```
+2. Add the following dependency to your project 
+```
+<dependency>
+  <groupId>com.adobe.aem.support</groupId>
+  <artifactId>pdfviewer.all</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <type>zip</type>
+</dependency>
+```
+3. Add the following repositories tag in your pom file
+```
+<repositories>
+    <repository>
+      <id>github</id>
+      <name>Github</name>
+      <releases>
+        <enabled>false</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+      <url>https://maven.pkg.github.com/pat-lego/support-pdfviewer</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+```
+4. Run a mvn build
