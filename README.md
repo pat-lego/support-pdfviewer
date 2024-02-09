@@ -36,6 +36,7 @@ test, execute:
 curl -O --header "Authorization: Bearer BEARER_TOKEN" https://maven.pkg.github.com/pat-lego/support-pdfviewer/com/adobe/aem/support/pdfviewer.all/1.0.0-SNAPSHOT/pdfviewer.all-1.0.0-SNAPSHOT.zip
 ```
 2. Follow these steps to embed the dependency in the project
+   https://medium.com/@jakubtutko/maven-repository-inside-your-project-4c55b4d73be8
 
 # How to use in your Maven project
 
