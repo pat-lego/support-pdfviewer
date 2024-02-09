@@ -23,6 +23,7 @@ language governing permissions and | limitations under the License. -->
     <module>ui.config</module>
     <module>ui.content</module>
   </modules>
+
   <properties>
     <aem.host>localhost</aem.host>
     <aem.port>4502</aem.port>
@@ -41,6 +42,15 @@ language governing permissions and | limitations under the License. -->
     <aemanalyser.version>1.4.10</aemanalyser.version>
     <componentGroupName>pdfviewer</componentGroupName>
   </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/pat-lego/support-pdfviewer</url>
+    </repository>
+  </distributionManagement>
+
   <build>
     <plugins> <!-- Maven Release Plugin -->
       <plugin>
