@@ -12,7 +12,7 @@ language governing permissions and | limitations under the License. -->
   <groupId>com.adobe.aem.support</groupId>
   <artifactId>pdfviewer</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>pdfviewer</name>
   <description>pdfviewer</description>
   <modules>
@@ -21,7 +21,7 @@ language governing permissions and | limitations under the License. -->
     <module>ui.apps</module>
     <module>ui.apps.structure</module>
     <module>ui.config</module>
-    <module>ui.content</module>
+    <!-- <module>ui.content</module> -->
   </modules>
 
   <properties>
